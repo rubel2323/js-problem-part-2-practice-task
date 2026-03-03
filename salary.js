@@ -3,6 +3,7 @@
 
 function employeeSalary(salaries) {
   let totalSalary = 0;
+
   for (let salary of salaries) {
     let oneEmployee = salary.experience * salary.increment + salary.starting;
     totalSalary += oneEmployee;
