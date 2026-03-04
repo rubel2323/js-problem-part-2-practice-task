@@ -7,14 +7,14 @@ function calculateFinalScore(obj) {
     obj.schoolGrade <= 30 &&
     typeof obj.isFFamily === "boolean"
   ) {
-    if (obj.isFFamily === true) {
-      let totalScore = obj.testScore + obj.schoolGrade + 10;
+    let testSchoolTotal = obj.testScore + obj.schoolGrade;
 
-      if (totalScore >= 80) {
-        return true;
-      } else {
-        return false;
-      }
+    if (obj.isFFamily === true) {
+      testSchoolTotal = testSchoolTotal + 20;
+    }
+
+    if (testSchoolTotal >= 80) {
+      return true;
     } else {
       return false;
     }
@@ -25,7 +25,7 @@ function calculateFinalScore(obj) {
 
 const applicant = calculateFinalScore({
   name: "Rajib",
-  testScore: 40,
+  testScore: 30,
   schoolGrade: 30,
   isFFamily: true,
 });
